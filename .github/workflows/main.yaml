@@ -2,8 +2,6 @@ name: Create and Validate Atlas Playbook
 
 on:
   push:
-    paths:
-      - "src/**"
 
 env:
   SXSC_REPO: "https://github.com/Atlas-OS/sxsc"
@@ -15,9 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
-          token: ${{ secrets.RUNNER_SECRET }}
 
       - name: Get changed files
         id: changed-files
